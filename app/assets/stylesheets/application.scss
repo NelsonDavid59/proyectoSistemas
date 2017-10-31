@@ -14,7 +14,9 @@
  */
 
 @import "bootstrap";
+@import "bootstrap-sprockets";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "AdminLTE";
 @import "_all-skins";
+@import "user"

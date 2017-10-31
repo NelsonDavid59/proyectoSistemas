@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html>
-	<head>
-    	
-		<title>Dirección de Extensión e Investigación - FIUNI</title>
-		
+<head>
+	<title></title>
+
 	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  	
-  	</head>
-  
-
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>	    
+	
+</head>
 <body class="hold-transition skin-green sidebar-mini">
-
-		<div class="container">
-			<section class="main row">
-				<header class="col-md-2">
-					<br/>
-					<div class="imagen_logo">
-						<%= image_tag "logo2.png", :alt => "universidad", :title => "uni", :width => '140'%>
-					</div>
-					<br/>
-				</header>
-				<header class="col-md-8">
-					<br/>
-					<br/>
-					<h3 ALIGN="center">Dirección de Extensión e Investigación</h3>
-					<h3 ALIGN="center">Facultad de Ingeniería - UNI</h3>
-				</header>
-				<header class="col-md-2">
-					<br/>
-					<div class="imagen_logo">
-						<%= image_tag "FIUNI2.png", :alt => "facu", :title => "fiuni", :width => '130', :align => 'middle'%>
-					</div>
-					<br/>
-				</header>
-			</section>
-		</div>
-
 
   <div class="wrapper">
 
     <header class="main-header">
+
+
       <!-- Logo -->
       <a class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -81,10 +53,10 @@
               <li><a href="index2.html"><i class="fa fa-circle-o"></i> Servicios</a></li>
             </ul>
           </li>
-          <li><a href="universitarios"><i class="fa fa-users"></i> <span>Universitarios</span></a></li>
+          <li><a href="https://adminlte.io/docs"><i class="fa fa-users"></i> <span>Universitarios</span></a></li>
           <li><a href="https://adminlte.io/docs"><i class="fa fa-camera"></i> <span>Galeria</span></a></li>    
-          <li><a><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
-          
+          <li><a href="user"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
+          <li><%=link_to 'Salir',destroy_user_session_path(:authenticity_token=> form_authenticity_token()),method: 'delete' %></li>
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -92,17 +64,12 @@
   
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="padding-top:1px;">
-     <%= yield %>
+      <!-- Content Header (Page header) -->
+<%=yield%>
 
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-      reserved.
-    </footer>
+    
 
     <!-- Control Sidebar -->
 
@@ -112,8 +79,5 @@
     <div class="control-sidebar-bg"></div>
   </div>
 
-
-    	  
-  	</body>
-
+</body>
 </html>
