@@ -1,13 +1,12 @@
 class UserController < ApplicationController
-  layout 'user'
+  layout 'index'
    before_action :authenticate_user!
    before_action :set_user, only: [:show, :edit, :update,:destroy]
-   protect_from_forgery with: :null_session, only: [:create]
+   protect_from_forgery with: :null_session, only: [:create,:update]
 
   def index
 		@users=User.all
-#    authorize! :read, @users
-	end
+  end
   
 
   # GET /user/new
@@ -16,10 +15,14 @@ class UserController < ApplicationController
   end
 # GET /user/
   def show
+   @user = User.find(params[:id])
+  authorize! :read, @article,:message =>"Acceso Denegado"
   end
 
   # GET /user/1/edit
   def edit
+    @user = User.find(params[:id])
+    @user.add_role(params[:role])
   end
 
   # POST /users
@@ -34,6 +37,7 @@ class UserController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.add_role(params[:role])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Usuario actualizado' }

@@ -110,5 +110,5 @@ ActiveRecord::Schema.define(version: 20171031034654) do
   add_foreign_key "alumnos", "datos_personals"
   add_foreign_key "data_users", "users", column: "users_id"
   add_foreign_key "datos_personals", "users"
-
+  end
 end

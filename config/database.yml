@@ -25,7 +25,7 @@ development:
   <<: *default
   database: proyecto_development
   username: postgres
-  password: ternerita
+  password: enzolandia
 
 
   # The specified database role being used to connect to postgres.
@@ -85,7 +85,7 @@ test:
 #
 production:
   <<: *default
-  database: p_production
+  database: proyecto_production
   username: postgres
   password: enzolandia 
 
